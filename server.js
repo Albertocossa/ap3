@@ -1,12 +1,13 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors')
 
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
-
+app.use(cors());
 // Conexão com o banco de dados MySQL
 const db = mysql.createConnection({
   host: 'mysql-xitique.alwaysdata.net',
